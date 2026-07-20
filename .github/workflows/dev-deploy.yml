@@ -1,0 +1,17 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  docker:
+    permissions:
+      contents: read
+      packages: write
+
+    uses: java-taxi-microservices/ci-cd-workflows/.github/workflows/docker-build-push.yml@dev
+
+    with:
+      image_name: ${{ github.event.repository.name }}
