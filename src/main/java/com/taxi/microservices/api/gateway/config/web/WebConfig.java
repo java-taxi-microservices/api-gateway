@@ -12,7 +12,7 @@ public class WebConfig implements WebMvcConfigurer {
     public void configureApiVersioning(ApiVersionConfigurer configurer) {
         configurer.
                 usePathSegment(1)
-                .addSupportedVersions("1")
+                .addSupportedVersions("1", "2")
                 .setDefaultVersion("1");
     }
 
