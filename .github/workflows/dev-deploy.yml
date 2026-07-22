@@ -11,7 +11,7 @@ jobs:
       contents: read
       packages: write
 
-    uses: java-taxi-microservices/devops/.github/workflows/dev-deploy.yaml@dev
+    uses: java-taxi-microservices/devops/.github/workflows/dev-deploy.yaml@main
 
     with:
       image_name: ${{ github.event.repository.name }}
