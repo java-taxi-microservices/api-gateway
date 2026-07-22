@@ -3,6 +3,12 @@
 # ==========================
 FROM docker.io/eclipse-temurin:25-jdk AS build
 
+ARG GITHUB_ACTOR
+ARG GITHUB_TOKEN
+
+ENV GITHUB_ACTOR=$GITHUB_ACTOR
+ENV GITHUB_TOKEN=$GITHUB_TOKEN
+
 WORKDIR /app
 
 # Copy Gradle wrapper and build files first
