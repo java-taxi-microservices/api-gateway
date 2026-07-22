@@ -16,6 +16,16 @@ java {
 
 repositories {
 	mavenCentral()
+
+	maven {
+		name = "GitHubPackages"
+		url = uri("https://maven.pkg.github.com/java-taxi-microservices/contracts")
+
+		credentials {
+			username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")
+			password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
+		}
+	}
 }
 
 ext {
@@ -23,6 +33,9 @@ ext {
 }
 
 dependencies {
+	implementation "com.taxi.microservices.contracts:registration:1.0.0"
+	implementation("org.mapstruct:mapstruct:1.6.3")
+	annotationProcessor("org.mapstruct:mapstruct-processor:1.6.3")
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-grpc-client'
 	implementation 'org.springframework.boot:spring-boot-starter-opentelemetry'

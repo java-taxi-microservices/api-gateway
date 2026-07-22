@@ -1,0 +1,12 @@
+spring:
+  grpc:
+    client:
+      channel:
+        registration-orchestrator:
+          target: static://localhost:9090
+
+management:
+  otlp:
+    metrics:
+      export:
+        enabled: false
