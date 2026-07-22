@@ -15,3 +15,6 @@ jobs:
 
     with:
       image_name: ${{ github.event.repository.name }}
+
+    secrets:
+      ghcr_pat: ${{ secrets.GHCR_PAT }}
